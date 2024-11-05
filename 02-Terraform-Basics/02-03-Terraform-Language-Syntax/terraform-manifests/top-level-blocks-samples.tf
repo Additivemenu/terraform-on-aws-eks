@@ -32,7 +32,7 @@ resource "aws_instance" "ec2demo" {
 }
 #####################################################################
 # Block-4: Input Variables Block
-variable "instance_type" {
+variable "instance_type" { # ! 1 label
   default = "t2.micro"
   description = "EC2 Instance Type"
   type = string
@@ -52,7 +52,7 @@ locals {
 #####################################################################
 # Block-7: Data sources Block
 # Get latest AMI ID for Amazon Linux2 OS
-data "aws_ami" "amzlinux" {
+data "aws_ami" "amzlinux" { # ! 2 labels
   most_recent      = true
   owners           = ["amazon"]
 
@@ -81,7 +81,7 @@ data "aws_ami" "amzlinux" {
 # Block-8: Modules Block
 # AWS EC2 Instance Module
 
-module "ec2_cluster" {
+module "ec2_cluster" { # ! 1 label
   source                 = "terraform-aws-modules/ec2-instance/aws"
   #version                = "~> 2.0"
   version = "5.5.0"
