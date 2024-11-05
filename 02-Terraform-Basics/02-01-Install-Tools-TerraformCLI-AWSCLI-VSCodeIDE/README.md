@@ -2,15 +2,25 @@
 
 ## Step-01: Introduction
 - Install Terraform CLI
-- Install AWS CLI
+- Install AWS CLI and config AWS credentials
+  - ask chatgpt
 - Install VS Code Editor
 - Install HashiCorp Terraform plugin for VS Code
+
+
+
 
 
 ## Step-02: MACOS: Terraform Install
 - [Download Terraform MAC](https://www.terraform.io/downloads.html)
 - [Install CLI](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 - Unzip the package
+
+
+```
+# while, not that complicated, just follow TF download guide
+```
+
 ```
 # Copy binary zip file to a folder
 mkdir /Users/<YOUR-USER>/Documents/terraform-install
@@ -40,6 +50,8 @@ rm -rf /usr/local/bin/terraform
 - [AWS CLI Install](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 - [Install AWS CLI - MAC](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-cmd)
 
+
+jus task chatgpt how to install, not this complicated
 ```
 # Install AWS CLI V2
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
@@ -78,6 +90,7 @@ aws s3 ls
 cat $HOME/.aws/credentials 
 ```
 
+# skipped: 
 ## Step-06: WindowsOS: Terraform & AWS CLI Install
 - [Download Terraform](https://www.terraform.io/downloads.html)
 - [Install CLI](https://learn.hashicorp.com/tutorials/terraform/install-cli)
