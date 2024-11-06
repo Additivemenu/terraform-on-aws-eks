@@ -1,3 +1,6 @@
+# ssh private keys
+*.pem
+
 # Local .terraform directories
 **/.terraform/*
 .DS_Store

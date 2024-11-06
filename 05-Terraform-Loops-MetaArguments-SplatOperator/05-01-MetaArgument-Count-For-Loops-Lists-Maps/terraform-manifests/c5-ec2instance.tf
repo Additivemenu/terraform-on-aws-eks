@@ -1,15 +1,15 @@
 # EC2 Instance
 resource "aws_instance" "myec2vm" {
   ami = data.aws_ami.amzlinux2.id
-  instance_type = var.instance_type
-  #instance_type = var.instance_type_list[1]  # For List
-  #nstance_type = var.instance_type_map["prod"]  # For Map
+  # instance_type = var.instance_type
+  #instance_type = var.instance_type_list[1]  # ! For List, index starts from 0
+  instance_type = var.instance_type_map["dev"]  # ! For Map
   user_data = file("${path.module}/app1-install.sh")
   key_name = var.instance_keypair
   vpc_security_group_ids = [ aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id   ]
-  count = 2
+  count = 2  # ! this will create 2 EC2 instances, we will need to use for loop in output to get each instance info
   tags = {
-    "Name" = "Count-Demo-${count.index}"
+    "Name" = "Count-Demo-${count.index}" # ! again, index starts from 0
   }
 }
 
