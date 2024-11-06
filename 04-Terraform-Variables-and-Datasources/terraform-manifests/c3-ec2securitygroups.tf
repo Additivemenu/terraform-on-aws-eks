@@ -1,7 +1,12 @@
-# Create Security Group - SSH Traffic
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
+
+# Create Security Group 1 - SSH Traffic
 resource "aws_security_group" "vpc-ssh" {
   name        = "vpc-ssh"
   description = "Dev VPC SSH"
+
+  # ! if vpc_id is not specified, create this resource in default vpc 
+
   ingress {
     description = "Allow Port 22"
     from_port   = 22
@@ -23,10 +28,13 @@ resource "aws_security_group" "vpc-ssh" {
   }
 }
 
-# Create Security Group - Web Traffic
+# Create Security Group 2 - Web Traffic
 resource "aws_security_group" "vpc-web" {
   name        = "vpc-web"
   description = "Dev VPC Web"
+
+  # ! if vpc_id is not specified, create this resource in default vpc 
+
   ingress {
     description = "Allow Port 80"
     from_port   = 80
