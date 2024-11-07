@@ -12,7 +12,7 @@ data "aws_availability_zones" "my_azones" {
 # Get the List of Availability Zones in a Particular region where that respective Instance Type is supported
 # Datasource-2
 data "aws_ec2_instance_type_offerings" "my_ins_type" {
-  for_each = toset(data.aws_availability_zones.my_azones.names)
+  for_each = toset(data.aws_availability_zones.my_azones.names) # ! now this is from another datasource (see it as a result from SQL query)
   filter {
     name   = "instance-type"
     values = ["t3.micro"]
@@ -43,7 +43,7 @@ output "output_v3_2" {
 
 # Output-3
 # Filtered Output: with Keys Function - Which gets keys from a Map
-# This will return the list of availability zones supported for a instance type
+# ! This will return the list of availability zones supported for a instance type
 output "output_v3_3" {
   value = keys({
     for az, details in data.aws_ec2_instance_type_offerings.my_ins_type: 

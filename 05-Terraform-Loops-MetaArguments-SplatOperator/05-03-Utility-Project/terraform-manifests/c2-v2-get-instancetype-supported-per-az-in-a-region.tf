@@ -2,7 +2,7 @@
 # Get the List of Availability Zones in a Particular region where that respective Instance Type is supported
 # Datasource
 data "aws_ec2_instance_type_offerings" "my_ins_type2" {
-  for_each = toset([ "us-east-1a", "us-east-1b", "us-east-1e" ])
+  for_each = toset([ "ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c" ]) # ! for_each only accepts map or set
   filter {
     name   = "instance-type"
     values = ["t3.micro"]
