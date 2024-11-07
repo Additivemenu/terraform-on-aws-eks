@@ -5,7 +5,7 @@
 output "instance_publicip" {
   description = "EC2 Instance Public IP"
   #value = aws_instance.myec2vm.*.public_ip   # Legacy Splat
-  #value = aws_instance.myec2vm[*].public_ip  # Latest Splat
+  #value = aws_instance.myec2vm[*].public_ip  # ! Latest Splat -> not working as here we are using for_each for aws_instance.myec2vm
   value = toset([for instance in aws_instance.myec2vm: instance.public_ip])
 }
 
