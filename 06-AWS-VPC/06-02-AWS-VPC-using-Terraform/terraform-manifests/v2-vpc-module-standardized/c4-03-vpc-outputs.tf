@@ -1,9 +1,10 @@
 # VPC Output Values
+# ! outputs are very useful when you want to export some data from the module to the root module or to the calling module
 
 # VPC ID
 output "vpc_id" {
   description = "The ID of the VPC"
-  value       = module.vpc.vpc_id
+  value       = module.vpc.vpc_id # ! this is the output from the vpc module we used from terraform-aws-modules
 }
 
 # VPC CIDR blocks

@@ -1,11 +1,11 @@
 # Create VPC Terraform Module
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
+  source  = "terraform-aws-modules/vpc/aws" # ! this is the source of the module from terraform registry
   #version = "4.0.1"    
   version = "5.4.0"    
 
   # VPC Basic Details
-  name = "${local.name}-${var.vpc_name}"
+  name = "${local.name}-${var.vpc_name}" 
   cidr = var.vpc_cidr_block
   azs             = var.vpc_availability_zones
   public_subnets  = var.vpc_public_subnets
@@ -27,7 +27,7 @@ module "vpc" {
   enable_dns_support   = true
 
 
-  tags = local.common_tags
+  tags = local.common_tags # ! local variables
   vpc_tags = local.common_tags
 
   # Additional Tags to Subnets
