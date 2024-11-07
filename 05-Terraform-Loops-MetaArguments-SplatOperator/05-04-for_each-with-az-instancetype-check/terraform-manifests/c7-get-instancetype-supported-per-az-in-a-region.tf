@@ -1,3 +1,5 @@
+# this copied from 05-03 utility project
+
 # Get List of Availability Zones in a Specific Region
 # Region is set in c1-versions.tf in Provider Block
 # Datasource-1
