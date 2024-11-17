@@ -1,4 +1,5 @@
 # VPC Output Values
+# ! find what outputs are available at https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest?tab=outputs
 
 # VPC ID
 output "vpc_id" {

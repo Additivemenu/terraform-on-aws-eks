@@ -1,6 +1,8 @@
-# AWS Availability Zones Datasource
+# ! AWS Availability Zones Datasource
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones#example-usage
 data "aws_availability_zones" "available" {  
-  #state = "available"
+  # state = "available"
+  # ! By default the list includes a complete set of Availability Zones to which the underlying AWS account (see c1-versions.tf) has access, regardless of their state.
 }
 
 
@@ -14,8 +16,8 @@ module "vpc" {
   # VPC Basic Details
   name = local.eks_cluster_name
   cidr = var.vpc_cidr_block
-  #azs             = var.vpc_availability_zones
-  azs             = data.aws_availability_zones.available.names
+  # azs             = var.vpc_availability_zones # this is hard-coded, inherited from previous course Seciton6
+  azs             = data.aws_availability_zones.available.names # ! here we are getting from data source, which is dynamic
   public_subnets  = var.vpc_public_subnets
   private_subnets = var.vpc_private_subnets  
 

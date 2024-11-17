@@ -14,14 +14,13 @@ variable "vpc_cidr_block" {
   default = "10.0.0.0/16"
 }
 
-# VPC Availability Zones
-/*
-variable "vpc_availability_zones" {
-  description = "VPC Availability Zones"
-  type = list(string)
-  default = ["us-east-1a", "us-east-1b"]
-}
-*/
+# VPC Availability Zones, legacy from section6
+# variable "vpc_availability_zones" {
+#   description = "VPC Availability Zones"
+#   type = list(string)
+#   default = ["ap-southeast-2a", "ap-southeast-2b"]
+# }
+
 
 # VPC Public Subnets
 variable "vpc_public_subnets" {

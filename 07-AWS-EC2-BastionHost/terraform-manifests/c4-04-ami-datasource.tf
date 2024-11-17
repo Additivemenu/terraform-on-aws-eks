@@ -1,4 +1,5 @@
-# Get latest AMI ID for Amazon Linux2 OS
+# Get latest AMI ID for Amazon Linux2 OS using data source https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami
+# you can actually use the filter in AWS console to locate the AMI ID
 data "aws_ami" "amzlinux2" {
   most_recent = true
   owners = [ "amazon" ]
