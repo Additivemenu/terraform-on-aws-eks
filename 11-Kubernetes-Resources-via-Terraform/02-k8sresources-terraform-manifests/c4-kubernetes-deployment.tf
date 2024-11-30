@@ -1,4 +1,5 @@
-# Kubernetes Deployment Manifest
+# Kubernetes Deployment Manifest 
+# ! note need to have version number as suffix in the resource name
 resource "kubernetes_deployment_v1" "myapp1" {
   metadata {
     name = "myapp1-deployment"
