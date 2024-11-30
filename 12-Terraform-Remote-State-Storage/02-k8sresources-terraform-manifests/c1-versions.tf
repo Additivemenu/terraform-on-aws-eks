@@ -13,4 +13,13 @@ terraform {
       version = ">= 2.20"
     }    
   }
+
+  backend "s3" {
+    bucket = "terraform-on-aws-eks-shawn6237"
+    key    = "dev/app1k8s/terraform.tfstate"
+    region = "ap-southeast-2"
+
+    # For State Locking
+    dynamodb_table = "dev-app1k8s"
+  }
 }

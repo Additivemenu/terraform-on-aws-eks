@@ -8,6 +8,18 @@ terraform {
       version = ">= 5.31"
      }
   }
+
+
+  # ! Adding Backend as S3 for Remote State Storage
+  backend "s3" {
+    bucket = "terraform-on-aws-eks-shawn6237"
+    key    = "dev/eks-cluster/terraform.tfstate"
+    region = "ap-southeast-2"
+
+    # For State Locking
+    dynamodb_table = "dev-ekscluster" 
+    
+  }
 }
 
 # Terraform Provider Block
