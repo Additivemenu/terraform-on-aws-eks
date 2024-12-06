@@ -1,4 +1,5 @@
 # Datasource: EBS CSI IAM Policy get from EBS GIT Repo (latest)
+# https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http
 data "http" "ebs_csi_iam_policy" {
   url = "https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/docs/example-iam-policy.json"
 
