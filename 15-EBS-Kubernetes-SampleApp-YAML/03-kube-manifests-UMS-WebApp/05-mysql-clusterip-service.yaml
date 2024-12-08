@@ -4,7 +4,7 @@ metadata:
   name: mysql
 spec:
   selector:
-    app: mysql 
+    app: mysql  # ! pod need to use this key-value pair to select this service
   ports: 
     - port: 3306  
   clusterIP: None # This means we are going to use Pod IP    

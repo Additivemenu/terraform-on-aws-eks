@@ -10,4 +10,4 @@ spec:
     - name: http
       port: 80 # Service Port
       targetPort: 8080 # Container Port
-      nodePort: 31280 # Node Port
+      nodePort: 31280 # Node Port, need to expose this port on the node

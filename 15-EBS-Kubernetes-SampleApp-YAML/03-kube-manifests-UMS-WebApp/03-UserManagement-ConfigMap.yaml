@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: usermanagement-dbcreation-script
-data: 
+data: # ! below corresponds to a config file
   mysql_usermgmt.sql: |-
     DROP DATABASE IF EXISTS webappdb;
     CREATE DATABASE webappdb; 
@@ -12,7 +12,7 @@ data:
 # 1. A ConfigMap is an API object used to store non-confidential data in 
 # key-value pairs. 
 
-# 2. Pods can consume ConfigMaps as 
+#!2. Pods can consume ConfigMaps as 
 ## 2.1: environment variables, 
 ## 2.2: command-line arguments, 
 ## 2.3: or as configuration files in a volume. We are going to use this in our MySQL Deployment)  

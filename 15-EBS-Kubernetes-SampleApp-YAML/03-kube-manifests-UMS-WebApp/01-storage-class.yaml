@@ -10,3 +10,4 @@ volumeBindingMode: WaitForFirstConsumer
 # 1. A StorageClass provides a way for administrators 
 # to describe the "classes" of storage they offer.
 # 2. Here we are offering EBS Storage for EKS Cluster
+# ! always use "volumeBindingMode: WaitForFirstConsumer" 
