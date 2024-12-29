@@ -1,6 +1,7 @@
 # Resource: UserMgmt WebApp Kubernetes Deployment
 resource "kubernetes_deployment_v1" "usermgmt_webapp" {
-  depends_on = [kubernetes_deployment_v1.mysql_deployment]
+  depends_on = [kubernetes_deployment_v1.mysql_deployment] #! This is important, as we need MySQL Pod to be up and running before we start UserMgmt WebApp Pod
+  # you can also use initContainers to wait for MySQL Pod to be up and running
   metadata {
     name = "usermgmt-webapp"
     labels = {

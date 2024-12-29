@@ -12,6 +12,6 @@ resource "kubernetes_service_v1" "mysql_clusterip_service" {
       #target_port = 3306 # Container Port  # Ignored when we use cluster_ip = "None"
     }
     type = "ClusterIP"
-    cluster_ip = "None" # This means we are going to use Pod IP   
+    cluster_ip = "None" # This means we are going to use MySQL Pod IP (as we only have 1 MySQL Pod) 
   }
 }
