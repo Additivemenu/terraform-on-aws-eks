@@ -15,6 +15,11 @@ locals {
       username = "system:node:{{EC2PrivateDNSName}}"
       groups = ["system:bootstrappers", "system:nodes"]
     },
+    {
+      rolearn  = "${aws_iam_role.eks_admin_role.arn}"
+      username = "eks-admin" # Just a place holder name
+      groups   = ["system:masters"]
+    },
   ]
   configmap_users = [
     {
@@ -57,6 +62,10 @@ data:
       - system:nodes
       rolearn: arn:aws:iam::180789647333:role/hr-dev-eks-nodegroup-role
       username: system:node:{{EC2PrivateDNSName}}
+    - rolearn: arn:aws:iam::180789647333:role/eks-admin-role
+      username: eks-admin
+      groups:
+        - system:masters
   mapUsers: |
     - userarn: arn:aws:iam::180789647333:user/eksadmin1
       username: eksadmin1
