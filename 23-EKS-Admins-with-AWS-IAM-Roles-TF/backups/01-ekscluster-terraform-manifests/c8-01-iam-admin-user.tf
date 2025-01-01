@@ -1,7 +1,6 @@
 # Resource: AWS IAM User - Admin User (Has Full AWS Access)
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user
 resource "aws_iam_user" "admin_user" {
-  name = "${local.name}-eksadmin1"  
+  name = "${local.name}-eksadmin1"
   path = "/"
   force_destroy = true
   tags = local.common_tags
